@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Player</title>
+</head>
+<body>
+<form action="#" th:action="@{/app/players}" th:object="${player}" method="post">
+  <label th:text="#{player.name}" />
+  <input type="text" th:field="*{name}" /><br />
+  <label th:text="#{player.score}" />
+  <input type="number" step="0.1" maxlength="3" min="0" max="1000" th:field="*{score}"/><br/>
+  <input type="hidden" th:field="*{id}" />
+  <input type="submit" th:value="#{action.save}" />
+</form>
+</body>
+</html>
